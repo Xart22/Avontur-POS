@@ -1,0 +1,211 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+    background-color: #e3e3e3;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+.side-nav {
+    background-color: #5e5e5e;
+}
+.list-group-item {
+    color: white;
+    background-color: #5e5e5e;
+    border: 1px solid white;
+}
+.user-info {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 235px;
+}
+.user-info img {
+    width: 50px;
+}
+.menu-bgr img {
+    width: 150px;
+}
+.top-nav {
+    background-color: white;
+}
+h2 {
+    color: #bb823f;
+    font-size: 4vw;
+    font-weight: bold;
+}
+.slide-menu {
+    margin-top: 30%;
+    text-align: center;
+}
+.time-container {
+    text-align: center;
+}
+#time {
+    color: white;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+}
+#date {
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+}
+.slide-menu a {
+    font-weight: bolder;
+}
+.slide-menu a:hover {
+    background-color: #bb823f;
+    color: white;
+}
+.logout {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: unset;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+.logout:hover {
+    color: white;
+    border: 1px solid white;
+    background-color: #bb823f;
+}
+.logout a {
+    text-decoration: none;
+}
+.page-header {
+    border-bottom: 1px solid black;
+}
+.pemasukan {
+    background-color: #bb823f;
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+}
+
+.img-item {
+    width: fit-content;
+}
+.text-item {
+    text-align: center;
+    margin: auto;
+}
+.container-dashboard {
+    gap: 100px;
+}
+.container-detail {
+    width: 100%;
+    background-color: white;
+}
+.btncan {
+    display: none;
+}
+.btn-sub {
+    display: none;
+}
+td {
+    width: fit-content;
+}
+table {
+    width: 100%;
+}
+.produk-item {
+    display: flex;
+    width: 35rem;
+    flex-wrap: wrap;
+    background-color: #bb823f;
+}
+.produk-item:hover {
+    box-shadow: 5px 5px grey;
+}
+.produk-item > div {
+    margin: 3px;
+}
+.item-produk input[type="text"] {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #2d9fd9;
+    color: black;
+    width: fit-content;
+    height: 30px;
+    padding-left: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.item-produk input[type="text"]:hover {
+    background-color: #5e5e5e;
+    border: none;
+    color: white;
+}
+
+.cart {
+    border: 1px solid red;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    justify-content: start;
+}
+.flex-container > div {
+    margin: 8px;
+}

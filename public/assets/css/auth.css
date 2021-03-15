@@ -1,0 +1,14 @@
+.container-box {
+    width: 20rem;
+    border: 1px solid black;
+    padding: 8px;
+    margin-top: 20%;
+    background-color: white;
+}
+body {
+    background-image: url("/assets/img//Avontur.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 800px 600px;
+}
