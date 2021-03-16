@@ -29,6 +29,9 @@ Route::post('Authlogin',[AuthLoginController::class,'login'])->name('auth.login'
 Route::middleware(['CheckAuth'])->group(function () {
     Route::get('/dashboard', [HomeControllers::class,'index']);
     Route::get('Authlogout',[AuthLoginController::class,'logout'])->name('auth.logout');
+    Route::post('addTempCart/{id}',[HomeControllers::class,'addTempCart'])->name('addTempCart');
+    Route::post('tambahqty/{id}',[HomeControllers::class,'tambahqty'])->name('tambahqty');
+
 });
 //admin
 Route::middleware(['CheckAuth', 'IsAdmin'])->group(function () {

@@ -50,3 +50,8 @@ if (document.getElementById("harga") == null) {
         return prefix == undefined ? rupiah : rupiah ? +rupiah : "";
     }
 }
+function upQty(el) {
+    var input = el.nextSibling;
+    var inp = input.nextSibling;
+    console.log(inp.value);
+}
