@@ -31,6 +31,7 @@ Route::middleware(['CheckAuth'])->group(function () {
     Route::get('Authlogout',[AuthLoginController::class,'logout'])->name('auth.logout');
     Route::post('addTempCart/{id}',[HomeControllers::class,'addTempCart'])->name('addTempCart');
     Route::post('tambahqty/{id}',[HomeControllers::class,'tambahqty'])->name('tambahqty');
+    Route::post('kurangqty/{id}',[HomeControllers::class,'kurangqty'])->name('kurangqty');
 
 });
 //admin

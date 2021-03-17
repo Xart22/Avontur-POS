@@ -34,11 +34,37 @@ class HomeControllers extends Controller
         
     }
     public function tambahqty($id){
-        $get_hrg = TempCart::where('id','=',$id)->first();
-        $int = intval($get_hrg->total_harga);
-        
-        dd(35.000);
-        // $cart = TempCart::where('id','=',$id)->update(['qty'=>'+1','total_harga'=>$total]);
-        // return back();
+            $get_total = TempCart::where('id','=',$id)->first();
+            $id_prd = $get_total->id_produk;
+            $get_hrg = Produk::where('id',"=",$id_prd)->first();
+            $hrg =  $get_hrg->harga;
+            $str = str_replace(".","",$hrg);
+            $ttl = str_replace(".","",$get_total->total_harga);
+            $int = (int)$str;
+            $intt =(int)$ttl;
+            $total = $ttl + $int;
+            $qtytemp = $get_total->qty;
+            $qty = $qtytemp+ 1;
+            $cart = TempCart::where('id','=',$id)->update(['qty'=>$qty,'total_harga'=>$total]);
+            return back();
+          
+          
     }
+    public function kurangqty($id){
+        $get_total = TempCart::where('id','=',$id)->first();
+        $id_prd = $get_total->id_produk;
+        $get_hrg = Produk::where('id',"=",$id_prd)->first();
+        $hrg =  $get_hrg->harga;
+        $str = str_replace(".","",$hrg);
+        $ttl = str_replace(".","",$get_total->total_harga);
+        $int = (int)$str;
+        $intt =(int)$ttl;
+        $total = $ttl - $int;
+        $qtytemp = $get_total->qty;
+        $qty = $qtytemp- 1;
+        $cart = TempCart::where('id','=',$id)->update(['qty'=>$qty,'total_harga'=>$total]);
+        return back();
+      
+      
+}
 }

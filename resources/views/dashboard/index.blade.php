@@ -46,12 +46,15 @@
                         <td>{{$item->name_produk}}</td>
                         <td>
                             <div class="quantity">
+                                
                                 <input
                                     type="number"
                                     min="1"
                                     max="9"
                                     step="1"
                                     value="{{$item->qty}}"
+                                    readonly
+                                    
                                 />
 
                                 <div class="quantity-nav"> 
@@ -69,13 +72,24 @@
 
                                     </form>
                                     </div>
-                                    <div class="quantity-button quantity-down">
-                                        -
-                                    </div>
+                                    <form
+                                    action="/kurangqty/{{$item->id}}"
+                                    method="post"
+                                >
+                            <div
+                                class="quantity-button quantity-down"
+                                onclick="this.closest('form').submit();return false;"
+                            >
+                                -
+                               
+                            @csrf
+
+                            </form>
+                            </div>
                                 </div>
                             </div>
                         </td>
-                        <td id="{{$item->id}}">Rp. {{$item->total_harga}}</td>
+                        <td id="ttd">{{$item->total_harga}}</td>
                     </tr>
 
                     @endforeach
