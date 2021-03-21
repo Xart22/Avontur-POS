@@ -1,0 +1,22 @@
+@media print {
+    #sidebar-wrapper {
+        display: none;
+    }
+    .page-header {
+        display: none;
+    }
+    #example_wrapper {
+        visibility: hidden;
+    }
+    .table {
+        display: block !important;
+        visibility: visible;
+    }
+    .omset {
+        visibility: visible !important;
+    }
+    h3 {
+        display: block !important;
+        font-weight: bolder;
+    }
+}

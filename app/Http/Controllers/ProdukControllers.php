@@ -8,7 +8,8 @@ use App\Models\Produk;
 class ProdukControllers extends Controller
 {
     public function index(){
-        return view('admin.produk',['produk'=>Produk::get()]);
+        
+        return view('admin.produk',['produk'=> Produk::get()]);
     }
 
     public function addProduk(Request $req){

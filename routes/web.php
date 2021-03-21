@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\AkunControllers;
 use App\Http\Controllers\ProdukControllers;
 use App\Http\Controllers\HomeControllers;
+use App\Http\Controllers\LaporanControllers;
 
 
 /*
@@ -27,11 +28,17 @@ Route::post('Authlogin',[AuthLoginController::class,'login'])->name('auth.login'
 //Daboard
 
 Route::middleware(['CheckAuth'])->group(function () {
-    Route::get('/dashboard', [HomeControllers::class,'index']);
+    Route::get('/dashboard', [HomeControllers::class,'index'])->name('dashboard');
     Route::get('Authlogout',[AuthLoginController::class,'logout'])->name('auth.logout');
     Route::post('addTempCart/{id}',[HomeControllers::class,'addTempCart'])->name('addTempCart');
     Route::post('tambahqty/{id}',[HomeControllers::class,'tambahqty'])->name('tambahqty');
     Route::post('kurangqty/{id}',[HomeControllers::class,'kurangqty'])->name('kurangqty');
+    Route::get('deleteall',[HomeControllers::class,'deleteall'])->name('deleteall');
+    Route::post('addlaporan',[HomeControllers::class,'addlaporan'])->name('addlaporan');
+    Route::get('detailreport/{id}',[LaporanControllers::class,'detail'] );
+    Route::get('/report/harian',[LaporanControllers::class,'index'] );
+    Route::get('/report/bulanan',[LaporanControllers::class,'bulanan'] );
+
 
 });
 //admin
@@ -50,4 +57,8 @@ Route::middleware(['CheckAuth', 'IsAdmin'])->group(function () {
     Route::get('/akun/{id}',[AkunControllers::class,'detailAkun'] );
     Route::post('deleteakun',[AkunControllers::class,'deleteAkun'])->name('deleteakun');
     Route::post('updateakun',[AkunControllers::class,'updateAkun'])->name('updateakun');
+
+    // LAPORAN
+
+    Route::post('deletelaporan',[LaporanControllers::class,'delete'])->name('deletelaporan');
 });

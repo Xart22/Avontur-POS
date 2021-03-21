@@ -57,6 +57,7 @@
                                 id="exampleInputEmail1"
                                 name="username"
                                 aria-describedby="emailHelp"
+                                autocomplete="off"
                             />
                         </div>
                         <div class="form-group">
@@ -66,6 +67,7 @@
                                 class="form-control"
                                 name="password"
                                 id="exampleInputPassword1"
+                                autocomplete="off"
                             />
                         </div>
                         <div class="form-group form-check">

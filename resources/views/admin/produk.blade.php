@@ -8,7 +8,7 @@
         data-toggle="modal"
         data-target="#exampleModal"
     >
-        Tambah Akun
+        Tambah Produk
     </button>
     @if(Session::get('fail'))
     <div class="p-3 mt-2 bg-danger text-white">
@@ -57,6 +57,7 @@
                                 id="exampleInputEmail1"
                                 name="nm_produk"
                                 aria-describedby="emailHelp"
+                                autocomplete="off"
                             />
                         </div>
                         <div class="form-group">
@@ -66,6 +67,7 @@
                                 class="form-control"
                                 name="harga"
                                 id="harga"
+                                autocomplete="off"
                             />
                         </div>
                         <button type="submit" class="btn btn-success w-100">
@@ -120,4 +122,7 @@
     </div>
 </div>
 
+@endsection
+@section('script')
+<script src="{{ asset('assets/js/costum.js') }}"></script>
 @endsection

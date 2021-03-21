@@ -52,6 +52,7 @@
                         name="nm_produk"
                         value="{{$produk->name_produk}}"
                         disabled
+                        autocomplete="off"
                     />
                 </div>
                 <div class="form-group">
@@ -63,6 +64,7 @@
                         id="harga"
                         value="{{$produk->harga}}"
                         disabled
+                        autocomplete="off"
                     />
                 </div>
                 <button
@@ -128,4 +130,7 @@
         bntcan.style.display = "block";
     }
 </script>
+
+<script src="{{ asset('assets/js/costum.js') }}"></script>
+
 @endsection

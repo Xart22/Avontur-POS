@@ -32,6 +32,6 @@ class TempCart extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('temp_cart');
+        Schema::dropIfExists('temp_carts');
     }
 }

@@ -17,7 +17,7 @@
     </head>
 
     <body>
-        <div class="d-flex toggled" id="wrapper">
+        <div class="d-flex " id="wrapper">
             <!-- Sidebar -->
             <div class="side-nav border-right" id="sidebar-wrapper">
                 <div class="user-info">
@@ -29,20 +29,33 @@
                     <span id="date"></span>
                 </div>
                 <div class="list-group list-group-flush slide-menu">
-                    <a href="/dashboard" class="list-group-item list-group-item-action"
-                        >Dashboard</a>
+                    <a
+                        href="/dashboard"
+                        class="list-group-item list-group-item-action"
+                        >Dashboard</a
+                    >
                     @if(session('loggedUser')->isAdmin == 1)
-                    <a href="/produk" class="list-group-item list-group-item-action"
+                    <a
+                        href="/produk"
+                        class="list-group-item list-group-item-action"
                         >Produk</a
                     >
-                    <a href="/akun" class="list-group-item list-group-item-action"
+                    <a
+                        href="/akun"
+                        class="list-group-item list-group-item-action"
                         >Akun</a
                     >
-                    
-                    <a href="/report" class="list-group-item list-group-item-action"
-                        >Report</a
-                    >
                     @endif
+                    <a
+                        href="/report/harian"
+                        class="list-group-item list-group-item-action"
+                        >Report Harian</a
+                    >
+                    <a
+                        href="/report/bulanan"
+                        class="list-group-item list-group-item-action"
+                        >Report Bulanan</a
+                    >
                 </div>
                 <a href="{{ route('auth.logout') }}">
                     <button class="logout">
@@ -76,17 +89,15 @@
                     >
                 </nav>
                 <div class="container mt-2">
-                <h1 class="page-header">@yield('pageheader')</h1>
+                    <h1 class="page-header">@yield('pageheader')</h1>
+                </div>
                 <div class="container-fluid">@yield('content')</div>
             </div>
-            
         </div>
-       
+
         <!-- Bootstrap core JavaScript -->
         <script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/js/costum.js') }}"></script>
 
-        
         @yield('script')
         <script>
             $("#menu-toggle").click(function (e) {

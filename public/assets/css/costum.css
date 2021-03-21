@@ -128,14 +128,9 @@ h2 {
 .logout a {
     text-decoration: none;
 }
+
 .page-header {
     border-bottom: 1px solid black;
-}
-.pemasukan {
-    background-color: #bb823f;
-    display: flex;
-    padding: 5px;
-    gap: 5px;
 }
 
 .img-item {
@@ -158,47 +153,32 @@ h2 {
 .btn-sub {
     display: none;
 }
-td {
-    width: fit-content;
-}
-table {
-    width: 100%;
-}
 .produk-item {
     display: flex;
-    width: 35rem;
     flex-wrap: wrap;
-    background-color: #bb823f;
-    align-items: flex-start;
-}
-.produk-item:hover {
-    box-shadow: 5px 5px grey;
-}
-.produk-item > div {
-    margin: auto;
+    justify-content: center;
+    gap: 1px;
 }
 
-.item-produk input[type="text"] {
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    border: 1px solid #2d9fd9;
-    color: black;
-    width: fit-content;
-    height: 30px;
-    padding-left: 10px;
-    text-align: center;
-    cursor: pointer;
+.produk-item div {
+    margin-top: 5px;
+    margin-right: 8px;
+    margin-left: 5px;
+    width: 200px;
 }
-.item-produk input[type="text"]:hover {
-    background-color: #5e5e5e;
-    border: none;
-    color: white;
+
+.produk {
+    width: 35%;
+    background-color: #bb823f;
+}
+.item-produk:hover {
+    background-color: #e3e3e3;
+    color: red;
 }
 
 .cart {
     border: 1px solid red;
-    width: 28rem;
+    width: 60%;
     background-color: white;
 }
 .flex-container {
@@ -281,4 +261,60 @@ input[type="number"] {
     height: 50%;
     color: white;
     background-color: red;
+}
+.pembayaran > div {
+    margin: auto;
+}
+.item-produk {
+    background-color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 12px;
+    padding: 5px;
+    text-align: center;
+    font-size: medium;
+}
+
+/* REPORT CSS */
+
+.box h4 {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: yellow;
+}
+.box span {
+    color: white;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+    margin-left: 50px;
+}
+.box {
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 20px;
+    background-color: #d39e62;
+}
+.box img {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.history {
+    margin-top: 30px;
+}
+.table-history {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.only {
+    background-color: lightslategray;
+    padding: 5px;
+}
+.table-bulan {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
 }

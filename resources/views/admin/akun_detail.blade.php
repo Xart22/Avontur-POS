@@ -64,6 +64,7 @@
                         name="username"
                         value="{{$akun->username}}"
                         disabled
+                        autocomplete="off"
                     />
                 </div>
                 <div class="form-group">
