@@ -12,7 +12,12 @@ use Illuminate\Support\Facades\Hash;
 class AuthLoginController extends Controller
 {
 public function index(){
-    return view('auth.login');
+    if(!session('loggedUser')){
+        return view('auth.login'); 
+    }else{
+        return redirect('/dashboard');
+    }
+    
 }
 public function login(Request $request){
 
