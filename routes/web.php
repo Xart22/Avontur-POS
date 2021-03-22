@@ -19,8 +19,8 @@ use App\Http\Controllers\LaporanControllers;
 |
 */
 //AUTH
-Route::get('/',[AuthLoginController::class,'index']);
-Route::post('Authlogin',[AuthLoginController::class,'login'])->name('auth.login');
+Route::get('/',[AuthLoginController::class,'index'])->name('login');
+Route::post('/authlogin',[AuthLoginController::class,'login'])->name('auth.login');
 
 
 
@@ -29,13 +29,13 @@ Route::post('Authlogin',[AuthLoginController::class,'login'])->name('auth.login'
 
 Route::middleware(['CheckAuth'])->group(function () {
     Route::get('/dashboard', [HomeControllers::class,'index'])->name('dashboard');
-    Route::get('Authlogout',[AuthLoginController::class,'logout'])->name('auth.logout');
-    Route::post('addTempCart/{id}',[HomeControllers::class,'addTempCart'])->name('addTempCart');
-    Route::post('tambahqty/{id}',[HomeControllers::class,'tambahqty'])->name('tambahqty');
-    Route::post('kurangqty/{id}',[HomeControllers::class,'kurangqty'])->name('kurangqty');
-    Route::get('deleteall',[HomeControllers::class,'deleteall'])->name('deleteall');
-    Route::post('addlaporan',[HomeControllers::class,'addlaporan'])->name('addlaporan');
-    Route::get('detailreport/{id}',[LaporanControllers::class,'detail'] );
+    Route::get('/authlogout',[AuthLoginController::class,'logout'])->name('auth.logout');
+    Route::post('/addTempCart/{id}',[HomeControllers::class,'addTempCart'])->name('addTempCart');
+    Route::post('/tambahqty/{id}',[HomeControllers::class,'tambahqty'])->name('tambahqty');
+    Route::post('/kurangqty/{id}',[HomeControllers::class,'kurangqty'])->name('kurangqty');
+    Route::get('/deleteall',[HomeControllers::class,'deleteall'])->name('deleteall');
+    Route::post('/addlaporan',[HomeControllers::class,'addlaporan'])->name('addlaporan');
+    Route::get('/detailreport/{id}',[LaporanControllers::class,'detail'] )->name('detailreport');
     Route::get('/report/harian',[LaporanControllers::class,'index'] );
     Route::get('/report/bulanan',[LaporanControllers::class,'bulanan'] );
 
@@ -45,20 +45,20 @@ Route::middleware(['CheckAuth'])->group(function () {
 Route::middleware(['CheckAuth', 'IsAdmin'])->group(function () {
     //produk
     Route::get('/produk',[ProdukControllers::class,'index'] );
-    Route::get('/produk/{id}',[ProdukControllers::class,'detailProduk'] );
-    Route::post('addProduk',[ProdukControllers::class,'addProduk'])->name('addproduk');
-    Route::post('deleteProduk',[ProdukControllers::class,'deleteProduk'])->name('deleteProduk');
-    Route::post('updateProduk',[ProdukControllers::class,'updateProduk'])->name('updateProduk');
+    Route::get('/produk/{id}',[ProdukControllers::class,'detailProduk'] )->name('detailproduk');
+    Route::post('/addProduk',[ProdukControllers::class,'addProduk'])->name('addproduk');
+    Route::post('/deleteProduk',[ProdukControllers::class,'deleteProduk'])->name('deleteProduk');
+    Route::post('/updateProduk',[ProdukControllers::class,'updateProduk'])->name('updateProduk');
 
     //akun
     
     Route::get('/akun',[AkunControllers::class,'index'] );
-    Route::post('addAkun',[AkunControllers::class,'addAkun'])->name('addakun');
-    Route::get('/akun/{id}',[AkunControllers::class,'detailAkun'] );
-    Route::post('deleteakun',[AkunControllers::class,'deleteAkun'])->name('deleteakun');
-    Route::post('updateakun',[AkunControllers::class,'updateAkun'])->name('updateakun');
+    Route::post('/addAkun',[AkunControllers::class,'addAkun'])->name('addakun');
+    Route::get('/akun/{id}',[AkunControllers::class,'detailAkun'] )->name('akun');
+    Route::post('/deleteakun',[AkunControllers::class,'deleteAkun'])->name('deleteakun');
+    Route::post('/updateakun',[AkunControllers::class,'updateAkun'])->name('updateakun');
 
     // LAPORAN
 
-    Route::post('deletelaporan',[LaporanControllers::class,'delete'])->name('deletelaporan');
+    Route::post('/deletelaporan',[LaporanControllers::class,'delete'])->name('deletelaporan');
 });

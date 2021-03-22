@@ -11,7 +11,7 @@
         <link href="{{ asset('assets/css/auth.css') }}" rel="stylesheet" />
         <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" />
     </head>
-    <body>
+    <body style="background-image:url({{ asset('assets/img/Avontur.png') }}) ;">
         <div class="d-flex justify-content-center">
             <div class="container-box">
                 <form action="{{ route('auth.login') }}" method="POST">

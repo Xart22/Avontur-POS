@@ -10,7 +10,7 @@
         <div class="produk-item">
             @foreach($produk as $produk)
                 <div class="nama-produk">
-                    <form action="/addTempCart/{{ $produk->id }}" method="post">
+                    <form action="{{ route('addTempCart', $produk->id) }}" method="post">
                         @csrf
                         <div class="item-produk" onclick="this.closest('form').submit();return false;">
                             <span>{{ $produk->name_produk }}</span>
@@ -44,7 +44,7 @@
                                     readonly />
 
                                 <div class="quantity-nav">
-                                    <form action="/tambahqty/{{ $item->id }}" method="post">
+                                    <form action="{{ route('tambahqty', $item->id) }}" method="post">
                                         <div class="quantity-button quantity-up"
                                             onclick="this.closest('form').submit();return false;">
                                             +
@@ -54,7 +54,7 @@
 
                                     </form>
                                 </div>
-                                <form action="/kurangqty/{{ $item->id }}" method="post">
+                                <form action="{{ route('kurangqty', $item->id) }}" method="post">
                                     <div class="quantity-button quantity-down"
                                         onclick="this.closest('form').submit();return false;">
                                         -
@@ -100,7 +100,7 @@
         </button>
     </div>
     <div>
-        <a href="/deleteall">
+        <a href="{{ url('/deleteall')}}">
         <button type="submit" class="btn btn-block text-white bg-danger" >
             Hapus Semua
         </button></a>

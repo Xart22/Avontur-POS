@@ -131,7 +131,7 @@
                         <td>{{$akun -> last_login}}</td>
                         <td>{{$akun -> last_logout}}</td>
                         <td>
-                            <a href="/akun/{{$akun->id}}">
+                            <a href="{{ route('akun', $akun->id) }}">
                                 <button
                                     type="button"
                                     class="btn btn-success w-100"

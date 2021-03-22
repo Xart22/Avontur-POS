@@ -30,29 +30,29 @@
                 </div>
                 <div class="list-group list-group-flush slide-menu">
                     <a
-                        href="/dashboard"
+                        href="{{ url('/dashboard')}}"
                         class="list-group-item list-group-item-action"
                         >Dashboard</a
                     >
                     @if(session('loggedUser')->isAdmin == 1)
                     <a
-                        href="/produk"
+                        href="{{ url('/produk')}}"
                         class="list-group-item list-group-item-action"
                         >Produk</a
                     >
                     <a
-                        href="/akun"
+                        href="{{ url('/akun')}}"
                         class="list-group-item list-group-item-action"
                         >Akun</a
                     >
                     @endif
                     <a
-                        href="/report/harian"
+                        href="{{ url('/report/harian')}}"
                         class="list-group-item list-group-item-action"
                         >Report Harian</a
                     >
                     <a
-                        href="/report/bulanan"
+                        href="{{ url('/report/bulanan')}}"
                         class="list-group-item list-group-item-action"
                         >Report Bulanan</a
                     >

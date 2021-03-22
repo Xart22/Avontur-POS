@@ -27,11 +27,12 @@ public function login(Request $request){
         'password'=>'required|min:5|max:12'
     ]);
 
-     $usr = User::where('username','=',$request->username)->firstorfail();
+     $usr = User::where('username','=',$request->username)->first();
      if (!$usr) {
          return back()->with('fail','Wrong username or password');
      } else {
-         if(Hash::check($request->password, $usr->password)){
+         $cek = Hash::check($request->password, $usr->password);
+         if($cek){
              $request->session()->put('loggedUser',$usr);
             // dd(session());
             date_default_timezone_set('Asia/Jakarta');
@@ -41,7 +42,6 @@ public function login(Request $request){
             $update->save();
              return redirect('/dashboard');
          }else{
-             //dd(session());
             return back()->with('fail','Wrong username or password');
          }
      }

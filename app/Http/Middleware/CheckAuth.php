@@ -18,7 +18,9 @@ class CheckAuth
     {
         if(!session('loggedUser')){
             return redirect('/');
+        }else{
+            return $next($request);
         }
-        return $next($request);
+        
     }
 }

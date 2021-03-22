@@ -105,7 +105,7 @@
                         <td>{{$produk -> name_produk}}</td>
                         <td>{{$produk -> harga}}</td>
                         <td>
-                            <a href="/produk/{{$produk->id}}">
+                            <a href="{{ route('detailproduk', $produk->id) }}">
                                 <button
                                     type="button"
                                     class="btn btn-success w-100"

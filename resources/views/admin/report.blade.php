@@ -62,7 +62,7 @@
                 <td id="ttlHr">{{$item->total}}</td>
                 <td class="text-uppercase">{{$item->jns}}</td>
                 <td>{{$item->tgl_pembayaran}}</td>
-                <td><a href="/detailreport/{{{$item->id}}}"><span style="color:blue"><i class="fas fa-print"></span></i></a>
+                <td><a href="{{ route('detailreport', $item->id) }}"><span style="color:blue"><i class="fas fa-print"></span></i></a>
                     <button style="border: none; padding: 0;background-color: unset;" data-toggle="modal"
                     data-target="#exampleModal"><span style="color:red"><i class="far fa-trash-alt"></i></span></a></button>
 
